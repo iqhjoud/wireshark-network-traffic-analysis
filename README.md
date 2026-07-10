@@ -48,7 +48,7 @@ I identified the first three packets used to establish a TCP connection:
 
 This handshake creates a reliable connection between the client and server.
 
-![TCP SYN, SYN-ACK, and ACK packets](images/02-tcp-handshake.png)
+![TCP three-way handshake in Wireshark](tcp-three-way-handshake.png)
 
 ## HTTP Traffic Analysis
 
