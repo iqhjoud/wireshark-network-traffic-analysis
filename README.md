@@ -36,7 +36,7 @@ query and response. The response included A records and CNAME records.
 - An A record maps a domain name to an IPv4 address.
 - A CNAME record maps an alias to its canonical domain name.
 
-![DNS response showing A and CNAME records](images/01-dns-analysis.png)
+![DNS response showing A and CNAME records](dns-analysis.png)
 
 ## TCP Three-Way Handshake
 
