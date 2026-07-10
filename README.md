@@ -37,6 +37,7 @@ query and response. The response included A records and CNAME records.
 - A CNAME record maps an alias to its canonical domain name.
 
 ![DNS response showing A and CNAME records](dns-analysis.png)
+*Figure 1: DNS response showing one CNAME record and two A records in Wireshark.*
 
 ## Destination IP Filtering
 
@@ -63,6 +64,7 @@ I identified the first three packets used to establish a TCP connection:
 This handshake creates a reliable connection between the client and server.
 
 ![TCP three-way handshake in Wireshark](tcp-three-way-handshake.png)
+*Figure 3: Wireshark capture showing the SYN, SYN-ACK, and ACK packets used to establish a TCP connection.*
 
 ## HTTP Traffic Analysis
 
@@ -126,3 +128,7 @@ This project helped me understand how DNS, TCP, HTTP, SSH, IP, and MAC
 addressing appear inside packet captures. It also demonstrated why
 filters and statistical tools are important when analyzing large
 amounts of network traffic.
+
+## Security and Privacy Note
+
+All screenshots were reviewed before publication. Passwords, personal information, course credentials, and sensitive packet-capture data were excluded from this repository.
