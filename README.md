@@ -52,28 +52,59 @@ This handshake creates a reliable connection between the client and server.
 
 ## HTTP Traffic Analysis
 
-I filtered HTTP traffic and examined the communication between the
-client and web server. I also used Follow TCP Stream to view the request
-and response together.
+I applied the `http` display filter in Wireshark to examine unencrypted web traffic between the client and web server.
 
-![HTTP traffic analysis](images/03-http-analysis.png)
+```text
+http
+```
 
-## SSH Encryption Analysis
+The captured traffic included:
 
-I compared HTTP and SSH traffic. HTTP traffic was readable in the packet
-capture, while SSH traffic was encrypted and could not be viewed in
-plain text.
+- HTTP `GET` requests sent by the client
+- `HTTP/1.1 200 OK` responses for successfully retrieved resources
+- A `404 Not Found` response for a requested resource that was unavailable
 
-![Encrypted SSH traffic](images/04-ssh-encryption.png)
+This analysis demonstrated how HTTP requests and responses can be identified and examined directly in a packet capture.
 
-## Protocol Statistics
+![HTTP requests and responses in Wireshark](http-traffic-analysis.png.png)
 
-I used Wireshark's Endpoints, Conversations, and Protocol Hierarchy
-features to identify active systems, TCP conversations, and commonly
-used protocols.
+*Figure 4: Wireshark capture showing HTTP GET requests, successful 200 OK responses, and a 404 Not Found response.*
 
-![Wireshark Protocol Hierarchy](images/05-protocol-hierarchy.png)
+## SSH Traffic and Encryption Analysis
 
+I applied the `ssh` display filter in Wireshark to examine Secure Shell communication between the Windows client and Linux server.
+
+```text
+ssh
+```
+
+The capture showed the SSH connection process, including:
+
+- SSH protocol negotiation
+- Key exchange initialization
+- Diffie-Hellman key exchange
+- Encrypted client and server packets
+
+Unlike unencrypted HTTP traffic, the contents of SSH communication cannot be read directly in Wireshark because SSH encrypts the transmitted data.
+
+![Encrypted SSH traffic in Wireshark](ssh-encrypted-traffic.png)
+
+*Figure 5: Wireshark capture showing SSHv2 key exchange and encrypted communication between the client and server.*
+## Protocol Hierarchy Statistics
+
+I used Wireshark’s Protocol Hierarchy statistics to examine the distribution of protocols in the packet capture.
+
+The Protocol Hierarchy window organizes captured traffic by network and application protocol. I expanded the User Datagram Protocol and Transmission Control Protocol sections to identify the applications responsible for the captured traffic.
+
+The analysis showed that:
+
+- HTTP was the most active TCP-based application.
+- Multicast DNS (mDNS) was the most active UDP-based application.
+- Wireshark displayed the number of packets and bytes associated with each protocol.
+
+![Wireshark Protocol Hierarchy statistics](protocol-hierarchy-statistics.png)
+
+*Figure 6: Wireshark Protocol Hierarchy showing TCP, UDP, and their associated application protocols.*
 ## Key Takeaways
 
 This project helped me understand how DNS, TCP, HTTP, SSH, IP, and MAC
