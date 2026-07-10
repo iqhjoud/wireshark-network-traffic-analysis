@@ -126,9 +126,3 @@ This project helped me understand how DNS, TCP, HTTP, SSH, IP, and MAC
 addressing appear inside packet captures. It also demonstrated why
 filters and statistical tools are important when analyzing large
 amounts of network traffic.
-
-## Security and Privacy Note
-
-All screenshots were sanitized. Passwords, personal information,
-course-provided materials, and sensitive packet-capture data were
-excluded from this repository.
