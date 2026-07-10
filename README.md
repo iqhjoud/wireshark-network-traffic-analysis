@@ -87,7 +87,7 @@ The capture showed the SSH connection process, including:
 
 Unlike unencrypted HTTP traffic, the contents of SSH communication cannot be read directly in Wireshark because SSH encrypts the transmitted data.
 
-![Encrypted SSH traffic in Wireshark](ssh-encrypted-traffic.png)
+![Encrypted SSH traffic in Wireshark](ssh-encrypted-traffic.png.png)
 
 *Figure 5: Wireshark capture showing SSHv2 key exchange and encrypted communication between the client and server.*
 ## Protocol Hierarchy Statistics
@@ -102,7 +102,7 @@ The analysis showed that:
 - Multicast DNS (mDNS) was the most active UDP-based application.
 - Wireshark displayed the number of packets and bytes associated with each protocol.
 
-![Wireshark Protocol Hierarchy statistics](protocol-hierarchy-statistics.png)
+![Wireshark Protocol Hierarchy statistics](protocol-hierarchy-statistics.png.png)
 
 *Figure 6: Wireshark Protocol Hierarchy showing TCP, UDP, and their associated application protocols.*
 ## Key Takeaways
