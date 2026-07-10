@@ -38,6 +38,20 @@ query and response. The response included A records and CNAME records.
 
 ![DNS response showing A and CNAME records](dns-analysis.png)
 
+## Destination IP Filtering
+
+I used a Wireshark display filter to show only packets sent to the Linux server.
+
+```text
+ip.dst == 10.10.1.120
+```
+
+The `ip.dst` field filters packets based on their destination IP address. This allowed me to focus on traffic traveling from the Windows client to the Linux server.
+
+![Wireshark destination IP filter](destination-ip-filter.png)
+
+*Figure 2: Wireshark display filter showing packets with the Linux server as the destination.*
+
 ## TCP Three-Way Handshake
 
 I identified the first three packets used to establish a TCP connection:
