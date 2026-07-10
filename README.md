@@ -106,19 +106,20 @@ Unlike unencrypted HTTP traffic, the contents of SSH communication cannot be rea
 *Figure 5: Wireshark capture showing SSHv2 key exchange and encrypted communication between the client and server.*
 ## Protocol Hierarchy Statistics
 
-I used Wireshark’s Protocol Hierarchy statistics to examine the distribution of protocols in the packet capture.
+I used Wireshark’s Protocol Hierarchy Statistics to examine the distribution of protocols in the packet capture.
 
-The Protocol Hierarchy window organizes captured traffic by network and application protocol. I expanded the User Datagram Protocol and Transmission Control Protocol sections to identify the applications responsible for the captured traffic.
+The Protocol Hierarchy window organizes traffic by network and application protocol and displays the number and percentage of packets and bytes associated with each protocol.
 
-The analysis showed that:
+The analysis showed:
 
-- HTTP was the most active TCP-based application.
-- Multicast DNS (mDNS) was the most active UDP-based application.
-- Wireshark displayed the number of packets and bytes associated with each protocol.
+- DNS was the most active visible UDP-based application with 1,626 packets.
+- Multicast DNS (mDNS) accounted for 162 packets.
+- TLS accounted for 9,913 packets, representing encrypted network communication.
+- HTTP accounted for 8,473 packets.
 
-![Wireshark Protocol Hierarchy statistics](protocol-hierarchy-statistics.png.png)
+![Wireshark Protocol Hierarchy Statistics](protocol-hierarchy-statistics.png.png)
 
-*Figure 6: Wireshark Protocol Hierarchy showing TCP, UDP, and their associated application protocols.*
+*Figure 6: Wireshark Protocol Hierarchy Statistics showing TCP, UDP, TLS, HTTP, DNS, and mDNS traffic.*
 ## Key Takeaways
 
 This project helped me understand how DNS, TCP, HTTP, SSH, IP, and MAC
